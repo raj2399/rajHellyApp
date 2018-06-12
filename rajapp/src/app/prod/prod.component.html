@@ -1,0 +1,48 @@
+<h1>Product Application</h1>
+<table>
+  <thead>
+  <th>Product ID</th>
+  <th>Name</th>
+   <th>Price</th>
+   <th>Image</th>
+   <th>Mfg</th>
+    <th>Stock on Hand</th>
+    <th>Action</th>
+   </thead>
+<tr *ngFor="let item of arr">
+<td>{{item.id}}</td>
+<td>{{item.name}}</td>
+<td>{{item.price}}</td>
+<td><img src={{this.a}}
+  ></td>
+<td>{{item.mfg}}</td>
+<td>{{item.soh}}</td>
+<td><button (click)="onDel(item)">Delete</button>|<button (click)="onUp(item)">Update</button></td>
+</tr>
+</table>
+<button (click)="onAddclick()" class="add">+</button>
+<hr>
+
+  <div *ngIf="deep">
+    <label>Product ID</label>
+    <input type="number" [(ngModel)]="id">
+    <br>
+    <label>Product Name</label>
+    <input type="text" [(ngModel)]="na">
+    <br>
+    <label>Price</label>
+    <input type="number" [(ngModel)]="price">
+    <br>
+    <label>Image</label>
+    <br>
+    <label>Mfg</label>
+    <input type="text" [(ngModel)]="mfg">
+    <br>
+    <label>Stock on Hand</label>
+    <br>
+    <select [(ngModel)]="soh">
+      <option *ngFor="let item of noarr">{{item}}</option>
+    </select>
+    <button (click)="onAdd()" style="margin-left: 1000px; height:50px; width: 50px;" >Add</button>
+  </div>
+

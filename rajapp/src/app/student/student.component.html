@@ -1,0 +1,71 @@
+<div class="container">
+  <b style="font-size: 50px; color: royalblue;">Student Application</b>
+</div>
+<hr>
+<div  class="container" *ngIf="flag">
+  <div class="form-group">
+   <h4>Id:</h4> <input class="form-control" type="number" [(ngModel)]="rollno">
+  </div>
+
+  <div class="form-group">
+      <h4>Name:</h4> <input class="form-control" type="text" [(ngModel)]="name">
+  </div>
+  <div class="form-group">
+    <h4>Mob:</h4> <input class="form-control" type="text" [(ngModel)]="mob">
+</div>
+
+<div class="form-group">
+      <h4>City:</h4>
+      <select class="form-control"  [(ngModel)]="city">
+        <option *ngFor="let item of sta" >{{item}}</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <h4>Gender:</h4>
+    <input class="form-control" type="radio" value="male" name="a1" [(ngModel)]="gen" checked="male">Male
+    <input class="form-control" type="radio" value="female" name="a1" [(ngModel)]="gen">Female
+    </div>
+    <div class="form-group">
+      <h4>Fees:</h4> <input class="form-control" type="text" [(ngModel)]="fees">
+  </div>
+
+
+  <div class="row">
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-primary form-control" (click)="onclickAdd()" >ADD</button>
+      </div>
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-danger form-control" (click)="flag=false" >CANCEL</button>
+      </div>
+
+
+  </div>
+
+</div>
+<hr>
+<table class="table">
+  <thead>
+    <th>ROLL-NO</th>
+    <th>NAME</th>
+    <th>MOB</th>
+    <th>CITY</th>
+    <th>GENDER</th>
+    <th>FEES</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.rollno}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.mob}}</td>
+    <td>{{item.city}}</td>
+    <td>{{item.gender}}</td>
+    <td>{{item.fees}}</td>
+    <td>
+      <button (click)="update(item)">Update</button>
+    </td>
+    <td>
+      <button (click)="dele(item)">delete</button>
+      </td>
+  </tr>
+</table>
+<hr>
+<button (click)="onAdd()" style="margin-left: 1000px; height:50px; width: 50px;" >+</button>

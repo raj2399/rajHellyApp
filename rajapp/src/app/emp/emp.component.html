@@ -1,0 +1,108 @@
+<div class="container">
+  <b style="font-size: 50px;">Emp Application</b>
+</div>
+  <button (click)="onAdd()" style="margin-left: 1000px; height:35px; width: 35px; margin-top:-250px;" >+</button>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="badge">14</span>
+          abc
+        </li>
+        <li class="list-group-item">
+          <span class="badge">14</span>
+         xyz
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+
+        <div *ngFor="let item of arr" class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{{this.x }}" alt="..." height="100px" width="100px" >
+            <div class="caption">
+              <h3>{{item.id}}</h3>
+              <p>{{item.name}}</p>
+              <p>{{item.city}}</p>
+              <p>
+                  <a href="#" class="btn btn-primary" role="button"(click)="ondele(item)">delete</a>
+                  <a href="#" class="btn btn-default" role="button" (click)="onupdate(item)">update</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <nav class="navbar navbar-inverse">
+
+    </nav>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>IMAGE</th>
+    <th>CITY</th>
+    <th>GENDER</th>
+    <th>HOBBY</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>
+      <img src={{this.y}} height='130px'>
+    </td>
+    <td>{{item.city}}</td>
+    <td>{{item.gender}}</td>
+    <td>{{item.hobbies}}</td>
+
+  </tr>
+</table>
+
+  <div  class="container" *ngIf="flag">
+    <div class="form-group">
+     <h4>Id:</h4> <input class="form-control" type="number" [(ngModel)]="id1">
+    </div>
+
+    <div class="form-group">
+        <h4>Name:</h4> <input class="form-control" type="text" [(ngModel)]="name1">
+    </div>
+
+    <div class="form-group">
+        <h4>Image:</h4> <input class="form-control" disabled type="text" [(ngModel)]="image1">
+    </div>
+ <div class="form-group">
+        <h4>City:</h4>
+        <select class="form-control"  [(ngModel)]="city">
+          <option *ngFor="let item of sta" >{{item}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <h4>Gender:</h4>
+      <input class="form-control" type="radio" value="male" name="a1" [(ngModel)]="gen" checked="male">Male
+      <input class="form-control" type="radio" value="female" name="a1" [(ngModel)]="gen">Female
+      </div>
+      <div class="form-group">
+          <h4>Hobbies:</h4>
+          <input class="form-control" type="checkbox" value="cricket" [(ngModel)]="ho">cricket
+          <input class="form-control" type="checkbox" value="reading" [(ngModel)]="ho">reading
+          </div>
+
+    <div class="row">
+        <div class="col-md-6">
+                <button class="btn btn-lg btn-primary form-control" (click)="onclickAdd()" >ADD</button>
+        </div>
+        <div class="col-md-6">
+                <button class="btn btn-lg btn-danger form-control" (click)="flag=false" >CANCEL</button>
+        </div>
+
+
+    </div>
+
+  </div>

@@ -1,0 +1,57 @@
+<div class="container">
+  <b style="font-size: 50px; color: royalblue;">Category Application</b>
+</div>
+<hr>
+<div  class="container" *ngIf="flag">
+  <div class="form-group">
+   <h4>Id:</h4> <input class="form-control" type="number" [(ngModel)]="id">
+  </div>
+
+  <div class="form-group">
+      <h4>Name:</h4> <input class="form-control" type="text" [(ngModel)]="name">
+  </div>
+
+
+
+<div class="form-group">
+      <h4>Is_Active</h4>
+      <select class="form-control"  [(ngModel)]="bool">
+        <option *ngFor="let item of sta" >{{item}}</option>
+      </select>
+  </div>
+
+  <div class="row">
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-primary form-control" (click)="onclickAdd()" >ADD</button>
+      </div>
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-danger form-control" (click)="flag=false" >CANCEL</button>
+      </div>
+
+
+  </div>
+
+</div>
+<hr>
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>Is_Active</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.C_Id}}</td>
+    <td>{{item.C_Name}}</td>
+    <td>{{item.Is_Active}}</td>
+    <td>
+      <button (click)="update(item)">Update</button>
+    </td>
+    <td>
+      <button (click)="dele(item)">delete</button>
+      </td>
+  </tr>
+</table>
+<hr>
+
+<button (click)="onAdd()" style="margin-left: 1000px; height:50px; width: 50px;" >+</button>
+<button (click)="search(item)" style="margin-left: 1000px; height:50px; width:100px;">Search</button>
