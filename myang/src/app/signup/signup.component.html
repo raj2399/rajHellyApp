@@ -1,0 +1,50 @@
+<div class="container">
+  <b style="font-size: 50px; color: royalblue;">SignUp Form</b>
+</div>
+<hr>
+<div  class="container">
+  <div class="form-group">
+   <h4>Email_Id:</h4> <input class="form-control" type="text" [(ngModel)]="email">
+  </div>
+
+  <div class="form-group">
+      <h4>Password:</h4> <input class="form-control" type="text" [(ngModel)]="pass">
+  </div>
+
+  <div class="form-group">
+    <h4>User_name:</h4> <input class="form-control" type="text" [(ngModel)]="name">
+</div>
+  <div class="form-group">
+    <h4>Mob:</h4> <input class="form-control" type="text" [(ngModel)]="mob">
+</div>
+
+<div class="form-group">
+      <h4>City:</h4>
+      <select class="form-control"  [(ngModel)]="city">
+        <option *ngFor="let item of sta" >{{item}}</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <h4>Gender:</h4>
+    <input class="form-control" type="radio" value="male" name="a1" [(ngModel)]="gen" checked="male">Male
+    <input class="form-control" type="radio" value="female" name="a1" [(ngModel)]="gen">Female
+    </div>
+
+  <div class="form-group">
+    <h4>Add:</h4> <input class="form-control" type="textarea" [(ngModel)]="add">
+</div>
+
+  <div class="row">
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-primary form-control" (click)="onAdd()" >Save</button>
+      </div>
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-danger form-control" (click)="oncan()">CANCEL</button>
+      </div>
+
+
+  </div>
+
+</div>
+<hr>
+

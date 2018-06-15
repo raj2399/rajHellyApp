@@ -1,0 +1,34 @@
+<div class="container">
+  <b style="font-size: 50px; color: royalblue;">Login Form</b>
+</div>
+<hr>
+<div  class="container">
+  <div class="form-group">
+   <h4>Email_Id:</h4> <input class="form-control" type="text" [(ngModel)]="email">
+  </div>
+
+  <div class="form-group">
+      <h4>Password:</h4> <input class="form-control" type="text" [(ngModel)]="pass">
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+            <button class="btn btn-lg btn-primary form-control" (click)="onSave()" >Log In</button>
+    </div>
+    <div class="col-md-6">
+            <button class="btn btn-lg btn-danger form-control" (click)="flag=false">CANCEL</button>
+    </div>
+
+
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p style="margin-left: 100px;margin-top:30px;">Already have an account?</p>
+          <a style="margin-left:150px;" (click)="onSign()" >Sign up</a>
+  </div>
+  <div class="col-md-6">
+      <p style="margin-left:200px;margin-top:30px;">Forgrt Password?</p>
+            <a style="margin-left:200px;" (click)="onforget()" >Check Password</a>
+    </div>
+
+
+  </div>

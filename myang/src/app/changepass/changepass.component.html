@@ -1,0 +1,32 @@
+<div class="container">
+    <b style="font-size: 50px; color: royalblue;">Change Password
+
+    </b>
+  </div>
+  <hr>
+  <div  class="container">
+    <div class="form-group">
+     <h4>Email_Id:</h4> <input class="form-control" type="text" [(ngModel)]="email">
+    </div>
+
+    <div class="form-group">
+        <h4>Password:</h4> <input class="form-control" type="text" [(ngModel)]="pass">
+    </div>
+    <div class="form-group">
+        <h4>New Password:</h4> <input class="form-control" type="text" [(ngModel)]="pass1">
+    </div>
+    <div class="form-group">
+        <h4>ReEnter Password:</h4> <input class="form-control" type="text" [(ngModel)]="pass2">
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-primary form-control" (click)="onSave()" >Save</button>
+      </div>
+      <div class="col-md-6">
+              <button class="btn btn-lg btn-danger form-control" (click)="oncan()">CANCEL</button>
+      </div>
+
+
+  </div>
+  </div>
